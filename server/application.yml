@@ -1,0 +1,59 @@
+# 🌐 Configuration du serveur REST et WebSocket de Lavalink
+server:
+  port: 2333              # 🔌 Port utilisé par Lavalink (doit être le même dans ton bot)
+  address: 0.0.0.0        # 🌍 Écoute sur toutes les adresses IP (localhost + LAN si besoin)
+
+# 🎵 Paramètres liés à Lavalink et à la lecture audio
+lavalink:
+  server:
+    password: "verysecurepassword"   # 🔐 Mot de passe de connexion (à mettre aussi dans ton bot !)
+    
+    sources:       # 🎧 Plateformes autorisées pour chercher de la musique
+      youtube: true
+      bandcamp: true
+      soundcloud: true
+      twitch: true
+      vimeo: true
+      http: true       # 🔗 URLs directes autorisées
+      local: false     # 📁 Fichiers locaux désactivés (conseillé pour la sécurité)
+
+    bufferDurationMs: 400            # 🧠 Buffer audio interne pour lisser la lecture
+    youtubePlaylistLoadLimit: 6      # 📜 Nombre de pages max pour charger une playlist YouTube (chaque page = 100 morceaux max)
+    playerUpdateInterval: 5          # ⏱️ Intervalle de mise à jour des données du lecteur en secondes
+    youtubeSearchEnabled: true       # 🔎 Active la recherche YouTube
+    soundcloudSearchEnabled: true    # 🔎 Active la recherche SoundCloud
+    gc-warnings: true                # ⚠️ Affiche les warnings de garbage collection dans les logs (utile pour debug)
+
+# 🚦 (optionnel) Gestion des IPs et anti-ban (désactivé ici)
+#ratelimit:
+#  ipBlocks: ["1.0.0.0/8"]            # Plages d'IP à utiliser si tu tournes avec plusieurs IPs
+#  excludedIps: ["..."]               # IPs à ne pas utiliser
+#  strategy: "RotateOnBan"           # Stratégie de rotation si une IP est bannie
+#  searchTriggersFail: true          # ⚠️ Si une recherche échoue (code 429), on change d’IP
+#  retryLimit: -1                    # -1 = défaut, 0 = illimité, >0 = nombre d’essais
+
+# 📈 (optionnel) Monitoring Prometheus (désactivé ici)
+metrics:
+  prometheus:
+    enabled: false
+    endpoint: /metrics
+
+# 🛡️ (optionnel) Sentry = outil pour remonter les erreurs (désactivé ici)
+sentry:
+  dsn: ""             # ❌ Vide = pas utilisé
+  environment: ""     # Exemple : "production", "dev"
+#  tags:              # Tu peux ajouter des tags pour mieux filtrer les erreurs si Sentry est activé
+#    some_key: some_value
+#    another_key: another_value
+
+# 📝 Logs du serveur Lavalink
+logging:
+  file:
+    max-history: 30    # 🗓️ Conserve les logs pendant 30 jours
+    max-size: 1GB      # 📦 Taille max d’un fichier log avant rotation
+
+  path: ./logs/        # 📂 Dossier où seront enregistrés les logs
+
+  level:
+    root: INFO         # 🌍 Niveau de log global (DEBUG / INFO / WARN / ERROR)
+    lavalink: INFO     # 🎵 Niveau spécifique pour Lavalink
