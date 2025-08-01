@@ -1,0 +1,34 @@
+[
+  {
+    "userId": {
+      "guildId": "1399067283493486643",
+      "userId": "1148655709219733575",
+      "message": "1. 2. Teste. Teste. 1. 2. Teste. Teste. 1. 2. Teste. Teste."
+    },
+    "timestamp": "2025-07-31T18:27:33.446Z"
+  },
+  {
+    "userId": {
+      "guildId": "1399067283493486643",
+      "userId": "1148655709219733575",
+      "message": "Coucou, c'est quoi ton bodycount ?"
+    },
+    "timestamp": "2025-07-31T19:22:32.831Z"
+  },
+  {
+    "userId": {
+      "guildId": "1399067283493486643",
+      "userId": "1148655709219733575",
+      "message": "Coucou c'est quoi ton bodycount ?"
+    },
+    "timestamp": "2025-07-31T19:27:33.361Z"
+  },
+  {
+    "userId": {
+      "guildId": "1399067283493486643",
+      "userId": "1148655709219733575",
+      "message": "Coucou c'est quoi ton bodycount ?"
+    },
+    "timestamp": "2025-07-31T19:28:36.874Z"
+  }
+]

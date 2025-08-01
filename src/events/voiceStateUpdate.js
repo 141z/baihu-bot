@@ -30,7 +30,7 @@ module.exports = {
 
     // 🏗 Création d'un nouveau salon vocal temporaire personnalisé
     const tempChannel = await newState.guild.channels.create({
-      name: `🎵 Salon de ${member.user.username}`, // Nom du salon
+      name: `Salon de ${member.user.username}`, // Nom du salon
       type: ChannelType.GuildVoice, // Type : vocal
       parent: joinedChannel.parentId, // Même catégorie que le créateur
       userLimit: 7, // ✅ Par défaut : 7 places max
